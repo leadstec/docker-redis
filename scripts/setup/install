@@ -1,0 +1,34 @@
+#!/bin/bash
+
+set -e
+
+clog -i "redis: Build process starts ..."
+
+# add image schema
+lcs-cli schema add --section redis
+
+# setup redis
+cp -f /scripts/setup/redis/redis.conf /etc/redis.conf
+clog -i "redis: Configuration templates copied."
+
+# supervisor
+cat > /etc/supervisor.conf.d/redis.conf <<EOF
+[program:redis]
+directory=/
+command=/usr/bin/redis-server /etc/redis.conf
+user=redis
+autostart=true
+autorestart=true
+stdout_logfile=${LOG_DIR}/supervisor/%(program_name)s.log
+stderr_logfile=${LOG_DIR}/supervisor/%(program_name)s.log
+EOF
+clog -i "redis: Supervisor configuration for redis created."
+
+# Create profile for global env in different shells
+cat > /etc/profile.d/redis.sh <<EOF
+export REDIS_LOG_DIR=${REDIS_LOG_DIR}
+EOF
+clog -i "redis: Global ENVs added to /etc/profile."
+
+# complete
+clog -i "redis: Build process completed."

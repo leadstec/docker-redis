@@ -1,0 +1,75 @@
+{
+  "registry": "regimg.com",
+  "image": "redis",
+  "version": "",
+  "build": "",
+  "schema": "20181204",
+  "lcs_schema": "1.6.0",
+  "permissions": [
+    {
+      "chmod": "755",
+      "chown": "redis",
+      "path": "${DB_DIR}"
+    },
+    {
+      "chmod": "755",
+      "chown": "redis",
+      "path": "${REDIS_LOG_DIR}"
+    }
+  ],
+  "envs": [
+    {
+      "name": "REDIS_RDB_COMPRESSION",
+      "default": "yes",
+      "replacements": [
+        {
+          "pattern": "{{REDIS_RDB_COMPRESSION}}",
+          "path": "/etc/redis.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
+      "name": "REDIS_MAX_CLIENTS",
+      "default": "5000",
+      "replacements": [
+        {
+          "pattern": "{{REDIS_MAX_CLIENTS}}",
+          "path": "/etc/redis.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
+      "name": "REDIS_PROTECTED_MODE",
+      "default": "no",
+      "replacements": [
+        {
+          "pattern": "{{REDIS_PROTECTED_MODE}}",
+          "path": "/etc/redis.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
+      "name": "REDIS_PORT",
+      "default": "6379",
+      "replacements": [
+        {
+          "pattern": "{{REDIS_PORT}}",
+          "path": "/etc/redis.conf",
+          "type": "1"
+        }
+      ]
+    }
+  ],
+  "secrets": [],
+  "storages": [
+    {
+      "type": "1",
+      "chown": "redis",
+      "path": "/etc/redis.conf",
+      "base": "redis"
+    }
+  ]
+}
