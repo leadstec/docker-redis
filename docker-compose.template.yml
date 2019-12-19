@@ -1,23 +1,20 @@
-version: "3.1"
-
+version: "3.7"
 # Set -arch=_aarch64 for arm build
-
 services:
-
   redis:
     build:
       context: .
       args:
 #        - arch=_aarch64
-        - version=4.0.11
+        - version=5.0.5
         - build=dev
-    image: mydev/redis:4.0.11
+    image: leadstec/redis:5.0.5
     ports:
       - "50231:6379"
     volumes:
-      - ~/volumes-data/redis.example.com/log:/data/log
-      - ~/volumes-data/redis.example.com/db:/data/db
-      - ~/volumes-data/redis.example.com/persist:/data/persist
+      - ~/volumes-data/redis.local/log:/data/log
+      - ~/volumes-data/redis.local/db:/data/db
+      - ~/volumes-data/redis.local/persist:/data/persist
     env_file:
       - ./env
     environment:
@@ -25,8 +22,8 @@ services:
       - LCS_LOG_LEVEL=debug
     secrets:
       - lcs
-    hostname: redis.example.com
-    container_name: redis.example.com
+    hostname: redis.local
+    container_name: redis.local
 
 secrets:
   lcs:

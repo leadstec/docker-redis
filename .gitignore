@@ -5,5 +5,3 @@
 *.zip
 sftp-config.json
 docker-compose.yml
-docker-compose.v2.yml
-docker-compose.v3.yml

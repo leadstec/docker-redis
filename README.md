@@ -1,6 +1,7 @@
-使用文档请参考 http://docs.fay.cloud/image/redis/
-
 ### CHANGELOG
+
+**2019-12-19**
+* Update to 5.0.5
 
 **4.0.11 2018-12-04**
 * 升级版本
