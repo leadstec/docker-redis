@@ -1,4 +1,40 @@
-### CHANGELOG
+# Redis image for VCubi Platform
+
+![Redis](https://img.shields.io/badge/Redis-5.0.9,_latest-blue)
+![x86_64](https://img.shields.io/badge/x86_64-supported-brightgreen)
+![aarch64](https://img.shields.io/badge/aarch64-supported-brightgreen)
+
+## How to Use
+
+### Pull image
+    # from Docker Hub
+    docker pull leadstec/redis:[tag]
+    docker pull leadstec/redis-aarch64:[tag]
+    # from Tencent CR
+    docker pull leadstec.tencentcloudcr.com/leadstec/redis:[tag]
+    docker pull leadstec.tencentcloudcr.com/leadstec/redis-aarch64:[tag]
+
+### Build image
+    docker-compose build redis
+
+### LCS Schema & ENV
+
+| ENV Variable              | Description               | Default | Accept Values |
+|---------------------------|---------------------------|---------|---------------|
+| REDIS_RDB_COMPRESSION     |                           | yes  |     |
+| REDIS_MAX_CLIENTS         |                           | 5000 |               |
+| REDIS_PROTECTED_MODE      |                           | no  |               |
+| REDIS_PORT                |                           | 6379  |               |
+| REDIS_STREAM_NODE_MAX_BYTES |                         | 4096 |       |
+| REDIS_STREAM_NODE_MAX_ENTRIES |                       | 100   |               |
+
+## Image Structure Test
+    container-structure-test test --image leadstec/redis:tag --config tests/redis.yaml
+
+## CHANGELOG
+
+**2020/10/03**
+* Update: Redis 5.0.9
 
 **2019-12-19**
 * Update to 5.0.5
