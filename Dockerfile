@@ -1,22 +1,17 @@
 #
 # Author            Frank,H.L.Lai <frank@leadstec.com>
-# Docker Version    19.03
+# Docker Version    20.10
 # Website           https://www.leadstec.com
-# Copyright         (C) 2020 LEADSTEC Systems. All rights reserved.
+# Copyright         (C) 2021 LEADSTEC Systems. All rights reserved.
 #
-ARG arch=
-FROM leadstec.tencentcloudcr.com/leadstec/alpine${arch}:3.12.0
-ARG version=5.0.x
-ARG build=dev
+FROM leadstec/alpine:3.12.3
 
 # set labels
-LABEL version="${version}-${build}" \
-    description="Redis image for VCubi platform" \
+LABEL description="Redis image for VCubi platform" \
     maintainer="Frank,H.L.Lai <frank@leadstec.com>"
 
 # set environment variables
-ENV REDIS_VERSION=${version} \
-    REDIS_LOG_DIR="${LOG_DIR}/redis"
+ENV REDIS_LOG_DIR="${LOG_DIR}/redis"
 
 # Update packages
 RUN apk --update add redis && \

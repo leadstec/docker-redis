@@ -4,11 +4,7 @@ services:
   redis:
     build:
       context: .
-      args:
-        - arch=
-        - version=5.0.9
-        - build=dev
-    image: leadstec.tencentcloudcr.com/leadstec/redis:5.0.9
+    image: leadstec/redis:5.0.9
     ports:
       - "50231:6379"
     volumes:
