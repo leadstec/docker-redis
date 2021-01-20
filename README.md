@@ -15,10 +15,10 @@ LEADSTEC: [Official website](https://www.leadstec.com)
     docker pull leadstec/redis:latest
 
     # Build image
-    docker-compose build .
+    docker-compose build
 
     # Image Structure Test
-    container-structure-test test --image leadstec/redis:tag --config tests/redis.yaml
+    container-structure-test test --image leadstec/redis:tag --config tests/redis.yml
 
 ## LCS Schema & ENV
 
