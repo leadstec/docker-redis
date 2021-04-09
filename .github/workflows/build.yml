@@ -36,5 +36,5 @@ jobs:
           push: true
           tags: |
             leadstec/redis:latest
-            leadstec/redis:5.0
-            leadstec/redis:5.0.9
+            leadstec/redis:6.0
+            leadstec/redis:6.0.11

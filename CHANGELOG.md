@@ -1,5 +1,8 @@
 # CHANGELOG
 
+**2021/04/10**
+* Update: Redis 6.0.11
+
 **2021/01/11**
 * Update: Implement Github Actions for CI
 * Update: Move to Docker Hub as default registry

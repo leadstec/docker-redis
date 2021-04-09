@@ -1,6 +1,6 @@
 # Redis image for VCubi Platform
 
-![Version](https://img.shields.io/badge/Redis-5.0.9-blue)
+![Version](https://img.shields.io/badge/Redis-6.0.11-blue)
 ![Arch](https://img.shields.io/badge/Arch-amd64,_arm64-brightgreen)
 ![Workflow](https://github.com/leadstec/docker-redis/workflows/ci/badge.svg)
 

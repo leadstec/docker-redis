@@ -19,6 +19,28 @@
   ],
   "envs": [
     {
+      "name": "REDIS_PROTECTED_MODE",
+      "default": "yes",
+      "replacements": [
+        {
+          "pattern": "{{REDIS_PROTECTED_MODE}}",
+          "path": "/etc/redis.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
+      "name": "REDIS_PORT",
+      "default": "6379",
+      "replacements": [
+        {
+          "pattern": "{{REDIS_PORT}}",
+          "path": "/etc/redis.conf",
+          "type": "1"
+        }
+      ]
+    },
+    {
       "name": "REDIS_RDB_COMPRESSION",
       "default": "yes",
       "replacements": [
@@ -35,28 +57,6 @@
       "replacements": [
         {
           "pattern": "{{REDIS_MAX_CLIENTS}}",
-          "path": "/etc/redis.conf",
-          "type": "1"
-        }
-      ]
-    },
-    {
-      "name": "REDIS_PROTECTED_MODE",
-      "default": "no",
-      "replacements": [
-        {
-          "pattern": "{{REDIS_PROTECTED_MODE}}",
-          "path": "/etc/redis.conf",
-          "type": "1"
-        }
-      ]
-    },
-    {
-      "name": "REDIS_PORT",
-      "default": "6379",
-      "replacements": [
-        {
-          "pattern": "{{REDIS_PORT}}",
           "path": "/etc/redis.conf",
           "type": "1"
         }
